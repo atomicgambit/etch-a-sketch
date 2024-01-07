@@ -11,8 +11,11 @@
 
 const grid = document.querySelector(".grid");
 for (let i = 0; i < 16; i++) {
-  const cell = document.createElement("div");
-  cell.classList.add("cell");
-  grid.appendChild(cell);
+  const row = document.createElement("div");
+  grid.appendChild(row);
+  for (let i = 0; i < 16; i++) {
+    const cell = document.createElement("div");
+    cell.classList.add("cell");
+    row.appendChild(cell);
+  }
 }
-console.log("hello");

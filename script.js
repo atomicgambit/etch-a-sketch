@@ -19,3 +19,10 @@ for (let i = 0; i < 16; i++) {
     row.appendChild(cell);
   }
 }
+
+const allCells = document.querySelectorAll(".cell");
+allCells.forEach((cell) =>
+  cell.addEventListener("click", () => {
+    alert("Hello Warudo!");
+  })
+);

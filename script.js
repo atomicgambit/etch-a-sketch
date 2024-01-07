@@ -1,13 +1,4 @@
-//Creating the grid
-//Add a container in your html
-//Create a reference in js to the grid
-//Use a for loop within a for loop to create a grid of 16 by 16
-//let i = 0, i < 16, i++
-// let j = 0, i < 16, i++
-//create a div element, call it cell
-//add a class to cell
-//append class to grid
-//give the cells a dark border
+//Create the grid
 
 const grid = document.querySelector(".grid");
 for (let i = 0; i < 16; i++) {
@@ -20,9 +11,18 @@ for (let i = 0; i < 16; i++) {
   }
 }
 
-const allCells = document.querySelectorAll(".cell");
-allCells.forEach((cell) =>
-  cell.addEventListener("click", () => {
-    alert("Hello Warudo!");
-  })
-);
+//Draws on mousedown
+
+function colorCell() {
+  this.classList.add("cellActive");
+}
+
+grid.addEventListener("mousedown", () => {
+  const allCells = document.querySelectorAll(".cell");
+  allCells.forEach((cell) => cell.addEventListener("mouseenter", colorCell));
+});
+
+grid.addEventListener("mouseup", () => {
+  const allCells = document.querySelectorAll(".cell");
+  allCells.forEach((cell) => cell.removeEventListener("mouseenter", colorCell));
+});

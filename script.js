@@ -6,6 +6,7 @@ let gridSize = 16;
 function createGrid(size) {
   for (let i = 0; i < size; i++) {
     const row = document.createElement("div");
+    row.classList.add("row");
     grid.appendChild(row);
     for (let i = 0; i < size; i++) {
       const cell = document.createElement("div");

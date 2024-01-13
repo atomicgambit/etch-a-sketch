@@ -1,7 +1,7 @@
 //Create the grid
 
 const grid = document.querySelector(".grid");
-let gridSize = 16;
+let gridSize = 9;
 
 function createGrid(size) {
   for (let i = 0; i < size; i++) {
@@ -39,5 +39,13 @@ grid.addEventListener("mouseup", () => {
 const gridBtn = document.querySelector("#gridBtn");
 gridBtn.addEventListener("click", () => {
   grid.textContent = "";
-  createGrid(32);
+  gridSize = 32;
+  createGrid(gridSize);
+});
+
+//Clear grid with button
+const clearBtn = document.querySelector("#clearBtn");
+clearBtn.addEventListener("click", () => {
+  grid.textContent = "";
+  createGrid(gridSize);
 });

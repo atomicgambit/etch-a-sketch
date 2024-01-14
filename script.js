@@ -44,8 +44,19 @@ gridBtn.addEventListener("click", () => {
 });
 
 //Clear grid with button
+
 const clearBtn = document.querySelector("#clearBtn");
 clearBtn.addEventListener("click", () => {
   grid.textContent = "";
   createGrid(gridSize);
+});
+
+//Display slider value
+const slider = document.querySelector("#myRange");
+const slideContainer = document.querySelector(".slidecontainer");
+const gridMessage = document.createElement("p");
+gridMessage.textContent = `Grid size: ${slider.value} x ${slider.value}`;
+slideContainer.append(gridMessage);
+slider.addEventListener("input", () => {
+  gridMessage.textContent = `Grid size: ${slider.value} x ${slider.value}`;
 });

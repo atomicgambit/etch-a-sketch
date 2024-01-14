@@ -34,15 +34,6 @@ grid.addEventListener("mouseup", () => {
   allCells.forEach((cell) => cell.removeEventListener("mouseenter", colorCell));
 });
 
-//Create new grid with btn
-
-const gridBtn = document.querySelector("#gridBtn");
-gridBtn.addEventListener("click", () => {
-  grid.textContent = "";
-  gridSize = 32;
-  createGrid(gridSize);
-});
-
 //Clear grid with button
 
 const clearBtn = document.querySelector("#clearBtn");
@@ -59,4 +50,10 @@ gridMessage.textContent = `Grid size: ${slider.value} x ${slider.value}`;
 slideContainer.append(gridMessage);
 slider.addEventListener("input", () => {
   gridMessage.textContent = `Grid size: ${slider.value} x ${slider.value}`;
+});
+
+//Change grid size with slider
+slider.addEventListener("click", () => {
+  grid.textContent = "";
+  createGrid(slider.value);
 });

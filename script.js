@@ -57,3 +57,5 @@ slider.addEventListener("click", () => {
   grid.textContent = "";
   createGrid(slider.value);
 });
+
+//bug: slider only works when you're on it
